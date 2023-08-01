@@ -73,12 +73,9 @@ function Tax() {
         border: 2px solid #435B66;
         border-radius: 7px;
         background: transparent;
-        font-size: 1.2rem;
+        z-index: 2;
         color: black;
-
-        &:hover{
-            border: 2px solid #B9C9C9;
-        }
+        font-size: 1.2rem;
     }
     `;
 
@@ -101,13 +98,11 @@ function Tax() {
         border: 2px solid #435B66;
         border-radius: 7px;
         background: transparent;
+        z-index: 2;
+        color: black;
         font-size: 1.2rem;
         margin-left: 5px;
         color: black;
-
-        &:hover{
-            border: 2px solid #B9C9C9;
-        }
     }
     `;
 
@@ -177,7 +172,7 @@ function Tax() {
                             <p>Tutar:</p>
                         </div>
                         <div>
-                            <input type='text' onChange={handleAmountChange} />
+                            <input type='number' onChange={handleAmountChange} />
                         </div>
                     </Form>
                 </section>

@@ -1,10 +1,12 @@
 import React from 'react';
-import './style/tax.css';
+import Tax from './Tax';
 
 function App() {
   return (
-    <div>Vergi Hesaplama</div>
+    <>
+      <Tax />
+    </>
   )
 }
 
-export default App
+export default App;

@@ -8,20 +8,24 @@ function Tax() {
     const [taxAmount, setTaxAmount] = useState(0);
     const [total, setTotal] = useState(0);
 
+    // vergi oranını seçmek için
     const handleTaxRateSelect = (rate) => {
         setTaxRate(rate);
     };
 
+    // tutar girişi için
     const handleAmountChange = (e) => {
-        setAmount(e.target.value);
+        setAmount(e.target.value); // input alanına girilen değeri yakalamak için
     };
 
+    // vergiyi hesaplar ve toplamı günceller
     const calculateTaxAndTotal = () => {
-        const parsedAmount = parseFloat(amount);
+        const parsedAmount = parseFloat(amount); //kullanıcının girdiği değeri sayıya çevirir
+        // NaN ise hesaplama yapılmaz, NaN değilse çalışır
         if (!isNaN(parsedAmount)) {
             setSubtotal(parsedAmount);
             const calculatedTaxAmount = (parsedAmount * taxRate) / 100;
-            setTaxAmount(calculatedTaxAmount);
+            setTaxAmount(calculatedTaxAmount); // vergi miktarı güncellenir
             setTotal(parsedAmount + calculatedTaxAmount)
         }
     };
@@ -76,7 +80,7 @@ function Tax() {
 
         p {
             position: relative;
-            left: 18%
+            left: 18%;
         }
     }
     `;

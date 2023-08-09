@@ -1,70 +1,25 @@
-# Getting Started with Create React App
+<div align="center">
+  <h1 align="center">VERGİ HESAPLAMA V2</h1>
+</div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Proje Hakkında✨
+![](https://github.com/dilarauluturhan/vergi-hesaplama-v2/assets/120499369/1cb66308-2ddb-4dc5-95c4-3a5c285ccdb3)
 
-## Available Scripts
+## Özellikler✨
+Bu projede Bootcamp eğitiminde gördüğümüz Reactjs özelliklerini kullanmayı hedefledim. Projede kullanıcının seçilen vergi oranına ve girilen tutara göre vergi hesaplamalarını gerçekleştiren arayüz oluşturdum. Vergi oranını seçme, tutar girişi, vergi dahil/hariç butonları ile hesaplamayı tetikleme özellikleri ekledim ve son olarak sonucu görüntüledim. Ayrıca Styled Components ile stil tanımlaması yaptım.
 
-In the project directory, you can run:
+## Kullanılan Teknolojiler✨
+Bu projede React.js ve Styled Components teknolojilerini kullandım.
 
-### `npm start`
+## İndirmek İçin✨
+````
+git clone https://github.com/dilarauluturhan/vergi-hesaplama-v2.git
+````
+## Kullanmak İçin✨
+İndirdiğiniz projeyi Visual Studio Code'da açınız. Terminal'e gelerek `npm start` yazdıktan sonra `http://localhost:3000` portunda projeyi görebilirsiniz.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Website✨
+[https://vergi-hesaplama-v2.vercel.app](https://vergi-hesaplama-v2.vercel.app)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## İletişim✨
+Dilara Uluturhan - [LinkedIn](https://www.linkedin.com/in/dilarauluturhan/) - dilarauluturhan@outlook.com

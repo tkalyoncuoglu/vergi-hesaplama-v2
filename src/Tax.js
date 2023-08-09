@@ -32,91 +32,24 @@ function Tax() {
     color: #2D4356;
     `;
 
-    const TaxRatePar = styled.p`
-    font-size: 2rem;
-    font-weight: 500;
+    const Subheader = styled.h2`
     text-align: center;
-    color: #435B66;
+    font-size: 2rem;
+    color: #2D4356;
     `;
 
-    const PerArea = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    div {
-        cursor: pointer;
-        margin-right: 10px;
-        border: 2px solid #435B66;
-        border-radius: 7px;
-        padding: 10px;
-        font-size: 1.2rem;
-        font-weight: 500;
-
-        &:hover{
-            background-color: #435B66;
-            color: #ffffff;
-        }
-    }
-
-    p{
-        margin-right: 10px;
-        border: 2px solid #435B66;
-        border-radius: 7px;
-        padding: 10px;
-        font-size: 1.2rem;
-        font-weight: 500;
-    }
-
-    input {
-        width: 8rem;
-        height: 2.6rem;
-        border: 2px solid #435B66;
-        border-radius: 7px;
-        background: transparent;
-        z-index: 2;
-        color: black;
-        font-size: 1.2rem;
-    }
-    `;
-
-    const Form = styled.form`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    font-weight: 600;
-    p{
-        border: 2px solid #435B66;
-        border-radius: 7px;
-        padding: 10px;
-        margin-left: 20px;
-    }
-
-    input{
-        width: 7rem;
-        height: 2.6rem;
-        border: 2px solid #435B66;
-        border-radius: 7px;
-        background: transparent;
-        z-index: 2;
-        color: black;
-        font-size: 1.2rem;
-        margin-left: 5px;
-        color: black;
-    }
-    `;
-
-    const ButtonArea = styled.div`
+    const Button = styled.div`
     display: flex;
     justify-content: center;
     margin-top: 25px;
+
     button {
-        margin: 0 5px;
+        margin: 0 10px;
         width: 9rem;
         height: 2.7rem;
         font-size: 1.3rem;
         font-weight: 500;
-        border: 2px solid #435B66;
+        border: 1px solid #435B66;
         border-radius: 7px;
         background: transparent;
 
@@ -132,13 +65,15 @@ function Tax() {
     justify-content: center;
     font-size: 1.3rem;
     font-weight: 500;
+
     div {
-        border: 2px solid #435B66;
+        border: 1px solid #435B66;
         border-radius: 7px;
         background: transparent;
-        width: 15rem;
+        width: 20rem;
         margin-top: 3rem;
         padding: 7px;
+
         p {
             position: relative;
             left: 18%
@@ -151,49 +86,44 @@ function Tax() {
             <header>
                 <Header>Vergi Hesaplama</Header>
             </header>
+
             <main>
                 <section>
-                    <TaxRatePar>Vergi Oranını Seçiniz..</TaxRatePar>
-                    <PerArea>
+                    <Subheader>Vergi Oranını Seçiniz..</Subheader>
+                    {/* bu bölüme className yazdım çünkü styled comp ile style verdiğimde input çalışmadı */}
+                    <div className='tax'>
                         <div onClick={() => handleTaxRateSelect(1)}>%1</div>
                         <div onClick={() => handleTaxRateSelect(8)}>%8</div>
                         <div onClick={() => handleTaxRateSelect(18)}>%18</div>
-                        <p>Yüzde Gir:</p>
+                        <div>Yüzde Gir:</div>
                         <input type='number' onChange={(e) => handleTaxRateSelect(e.target.value)} />
-                    </PerArea>
+                        <p>Vergi Oranı: {taxRate}%</p>
+                    </div>
                 </section>
 
                 <section>
-                    <Form>
-                        <div>
-                            <p>Vergi Oranı: {taxRate}%</p>
-                        </div>
-                        <div>
-                            <p>Tutar:</p>
-                        </div>
-                        <div>
-                            <input type='number' onChange={handleAmountChange} />
-                        </div>
-                    </Form>
+                    {/* bu bölüme className yazdım çünkü styled comp ile style verdiğimde input çalışmadı */}
+                    <div className='amount'>
+                        <p>Tutar:</p>
+                        <input type='number' onChange={handleAmountChange} />
+                    </div>
                 </section>
 
                 <section>
-                    <ButtonArea>
+                    <Button>
                         <button onClick={calculateTaxAndTotal}>Vergi Dahil</button>
                         <button onClick={() => setTotal(subtotal)}>Vergi Hariç</button>
-                    </ButtonArea>
+                    </Button>
                 </section>
 
                 <section>
-                    <div>
-                        <Total>
-                            <div>
-                                <p>Ara Toplam: {subtotal}</p>
-                                <p>Genel Toplam: {total}</p>
-                                <p>Vergi: {taxAmount}</p>
-                            </div>
-                        </Total>
-                    </div>
+                    <Total>
+                        <div>
+                            <p>Ara Toplam: {subtotal}</p>
+                            <p>Vergi: {taxAmount}</p>
+                            <p>Genel Toplam: {total}</p>
+                        </div>
+                    </Total>
                 </section>
             </main>
         </div>

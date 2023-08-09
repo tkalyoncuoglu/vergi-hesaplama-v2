@@ -15,3 +15,68 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.tax {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.tax div {
+  margin-right: 10px;
+  border: 1px solid #435B66;
+  border-radius: 7px;
+  padding: 10px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.tax div:hover {
+  background-color: #435B66;
+  color: #ffffff;
+}
+
+.tax input {
+  font-size: 1.2rem;
+  border: 1px solid #435B66;
+  border-radius: 7px;
+  background: transparent;
+  width: 8rem;
+  height: 2.7rem;
+}
+
+.tax p {
+  margin-left: 10px;
+  border: 1px solid #435B66;
+  border-radius: 7px;
+  padding: 10px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.amount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.amount p {
+  margin-right: 10px;
+  border: 1px solid #435B66;
+  border-radius: 7px;
+  padding: 10px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.amount input {
+  width: 8rem;
+  height: 2.7rem;
+  border: 1px solid #435B66;
+  border-radius: 7px;
+  background: transparent;
+  z-index: 2;
+  color: black;
+  font-size: 1.2rem;
+}

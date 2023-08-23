@@ -1,36 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-function Tax() {
-    const [taxRate, setTaxRate] = useState(0);
-    const [amount, setAmount] = useState(0);
-    const [subtotal, setSubtotal] = useState(0);
-    const [taxAmount, setTaxAmount] = useState(0);
-    const [total, setTotal] = useState(0);
-
-    // vergi oranını seçmek için
-    const handleTaxRateSelect = (rate) => {
-        setTaxRate(rate);
-    };
-
-    // tutar girişi için
-    const handleAmountChange = (e) => {
-        setAmount(e.target.value); // input alanına girilen değeri yakalamak için
-    };
-
-    // vergiyi hesaplar ve toplamı günceller
-    const calculateTaxAndTotal = () => {
-        const parsedAmount = parseFloat(amount); //kullanıcının girdiği değeri sayıya çevirir
-        // NaN ise hesaplama yapılmaz, NaN değilse çalışır
-        if (!isNaN(parsedAmount)) {
-            setSubtotal(parsedAmount);
-            const calculatedTaxAmount = (parsedAmount * taxRate) / 100;
-            setTaxAmount(calculatedTaxAmount); // vergi miktarı güncellenir
-            setTotal(parsedAmount + calculatedTaxAmount)
-        }
-    };
-
-    const Header = styled.h1`
+const Header = styled.h1`
     text-align: center;
     font-size: 3rem;
     color: #2D4356;
@@ -85,6 +56,99 @@ function Tax() {
     }
     `;
 
+    const TaxDiv = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  
+    div {
+        margin-right: 10px;
+        border: 1px solid #435B66;
+        border-radius: 7px;
+        padding: 10px;
+        font-size: 1.2rem;
+        font-weight: 500;
+    
+        &:hover {
+            background-color: #435B66;
+            color: #ffffff;
+        }
+    }
+    input {
+        font-size: 1.2rem;
+        border: 1px solid #435B66;
+        border-radius: 7px;
+        background: transparent;
+        width: 8rem;
+        height: 2.7rem;
+    }
+    
+    p {
+        margin-left: 10px;
+        border: 1px solid #435B66;
+        border-radius: 7px;
+        padding: 10px;
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+`;
+   const Amount = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+  p {
+    margin-right: 10px;
+    border: 1px solid #435B66;
+    border-radius: 7px;
+    padding: 10px;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  
+  input {
+    width: 8rem;
+    height: 2.7rem;
+    border: 1px solid #435B66;
+    border-radius: 7px;
+    background: transparent;
+    z-index: 2;
+    color: black;
+    font-size: 1.2rem;
+  }`;
+
+function Tax() {
+    const [taxRate, setTaxRate] = useState(0);
+    const [amount, setAmount] = useState(0);
+    const [subtotal, setSubtotal] = useState(0);
+    const [taxAmount, setTaxAmount] = useState(0);
+    const [total, setTotal] = useState(0);
+
+    // vergi oranını seçmek için
+    const handleTaxRateSelect = (rate) => {
+        setTaxRate(rate);
+    };
+
+    // tutar girişi için
+    const handleAmountChange = (e) => {
+        setAmount(e.target.value); // input alanına girilen değeri yakalamak için
+    };
+
+    // vergiyi hesaplar ve toplamı günceller
+    const calculateTaxAndTotal = () => {
+        const parsedAmount = parseFloat(amount); //kullanıcının girdiği değeri sayıya çevirir
+        // NaN ise hesaplama yapılmaz, NaN değilse çalışır
+        if (!isNaN(parsedAmount)) {
+            setSubtotal(parsedAmount);
+            const calculatedTaxAmount = (parsedAmount * taxRate) / 100;
+            setTaxAmount(calculatedTaxAmount); // vergi miktarı güncellenir
+            setTotal(parsedAmount + calculatedTaxAmount)
+        }
+    };
+
+    
+
     return (
         <div>
             <header>
@@ -94,23 +158,21 @@ function Tax() {
             <main>
                 <section>
                     <Subheader>Vergi Oranını Seçiniz..</Subheader>
-                    {/* bu bölüme className yazdım çünkü styled comp ile style verdiğimde input çalışmadı */}
-                    <div className='tax'>
+                    <TaxDiv>
                         <div onClick={() => handleTaxRateSelect(1)}>%1</div>
                         <div onClick={() => handleTaxRateSelect(8)}>%8</div>
                         <div onClick={() => handleTaxRateSelect(18)}>%18</div>
                         <div>Yüzde Gir:</div>
-                        <input type='number' onChange={(e) => handleTaxRateSelect(e.target.value)} />
+                        <input type='number' value={taxRate} onChange={(e) => handleTaxRateSelect(e.target.value)} />
                         <p>Vergi Oranı: {taxRate}%</p>
-                    </div>
+                    </TaxDiv>
                 </section>
 
                 <section>
-                    {/* bu bölüme className yazdım çünkü styled comp ile style verdiğimde input çalışmadı */}
-                    <div className='amount'>
+                    <Amount>
                         <p>Tutar:</p>
-                        <input type='number' onChange={handleAmountChange} />
-                    </div>
+                        <input type='number' value={amount} onChange={handleAmountChange} />
+                    </Amount>
                 </section>
 
                 <section>
